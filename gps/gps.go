@@ -50,3 +50,12 @@ func Heading() (heading float64, err error) {
 
 	return 0, errors.New("heading not available")
 }
+
+// Speed return the current speed.
+func Speed() (speed float64, err error) {
+	if TPV != nil {
+		return TPV.Speed, nil
+	}
+
+	return 0, errors.New("speed not available")
+}
